@@ -1,0 +1,9 @@
+{
+  "version": "3",
+  "redirects": {
+    "https://deno.land/x/opener/mod.ts": "https://deno.land/x/opener@v1.0.1/mod.ts"
+  },
+  "remote": {
+    "https://deno.land/x/opener@v1.0.1/mod.ts": "dd021a0327b29d8548c78881325dabe3079512e9647ae8b2050797875e70c87d"
+  }
+}

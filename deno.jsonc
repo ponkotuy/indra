@@ -1,0 +1,12 @@
+{
+  "fmt": {
+    "indentWidth": 2,
+    "semiColons": false,
+    "useTabs": false,
+    "lineWidth": 120,
+    "singleQuote": true
+  },
+  "tasks": {
+    "main": "deno run --allow-net --allow-env --allow-run main.ts"
+  }
+}
