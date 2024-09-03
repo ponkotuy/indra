@@ -7,6 +7,6 @@
     "singleQuote": true
   },
   "tasks": {
-    "main": "deno run --allow-net --allow-env --allow-run main.ts"
+    "main": "deno run --allow-net --allow-env --allow-run --allow-write main.ts"
   }
 }

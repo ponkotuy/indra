@@ -18,7 +18,7 @@ export const getToken = async (code: string) => {
   return (await res.json())['access_token']
 }
 
-export const printAuthorize = () => {
+export const printAuthorizeURL = () => {
   const parmas = new URLSearchParams({
     response_type: 'code',
     client_id: clientId,
