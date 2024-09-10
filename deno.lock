@@ -1,9 +1,12 @@
 {
   "version": "3",
   "redirects": {
+    "https://deno.land/x/http-header-link-es/": "https://deno.land/x/http-header-link-es",
     "https://deno.land/x/opener/mod.ts": "https://deno.land/x/opener@v1.0.1/mod.ts",
     "https://deno.land/x/xdg_portable#": "https://deno.land/x/xdg_portable@v10.6.0",
-    "https://deno.land/x/xdg_portable@v10.6.0/dist/": "https://deno.land/x/xdg_portable@v10.6.0/dist"
+    "https://deno.land/x/xdg_portable@v10.6.0/dist/": "https://deno.land/x/xdg_portable@v10.6.0/dist",
+    "https://github.com/hugoalh-studio/http-header-link-es/raw/main/mod.ts": "https://raw.githubusercontent.com/hugoalh-studio/http-header-link-es/main/mod.ts",
+    "https://github.com/hugoalh-studio/http-header-link-es/raw/v1.0.2/mod.ts": "https://raw.githubusercontent.com/hugoalh-studio/http-header-link-es/v1.0.2/mod.ts"
   },
   "remote": {
     "https://deno.land/std@0.134.0/_util/assert.ts": "e94f2eb37cebd7f199952e242c77654e43333c1ac4c5c700e929ea3aa5489f74",
@@ -25,6 +28,9 @@
     "https://deno.land/x/xdg_portable@v10.6.0/dist/esm/lib/XDG.js": "4c04a45149d66e4ca29ea914aac137e7b0f0b6a8ef431ffc63fef46bc3747064",
     "https://deno.land/x/xdg_portable@v10.6.0/src/mod.deno.ts": "e478cc109794bfc130ec81711f9a20d594e6fad848f796c68b75dbe510683c39",
     "https://deno.land/x/xdg_portable@v10.6.0/src/platform-adapters/_base.ts": "c79a7f0e5b1d77e23cbc6c782a02958573338e9dfa644a7aa5a1f7c402ff56ef",
-    "https://deno.land/x/xdg_portable@v10.6.0/src/platform-adapters/deno.deno.ts": "5f5852dc4588c10ad8fd0450421fa728741838cf5839a209d53323ccc9ed4c00"
+    "https://deno.land/x/xdg_portable@v10.6.0/src/platform-adapters/deno.deno.ts": "5f5852dc4588c10ad8fd0450421fa728741838cf5839a209d53323ccc9ed4c00",
+    "https://raw.githubusercontent.com/hugoalh-studio/http-header-link-es/main/mod.ts": "e428eb93ccfb60b868b81b1d41887f9cb28bab11763b527dc2760311cb7923d6",
+    "https://raw.githubusercontent.com/hugoalh-studio/http-header-link-es/v1.0.2/mod.ts": "a5ae84c0cbfa9d097452bb51f7fb966549aa0d7b2860d306f030745baba20d25",
+    "https://raw.githubusercontent.com/hugoalh-studio/is-string-singleline-es/v1.0.2/mod.ts": "ad199d8c6b81907028d7d9d4c3a072c85e9b4281a195ecd7806fcdd091ef2ef9"
   }
 }

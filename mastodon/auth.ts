@@ -1,8 +1,4 @@
-const REDIRECT_URI = 'urn:ietf:wg:oauth:2.0:oob'
-
-const clientId = Deno.env.get('CLIENT_ID')!
-const clientSecret = Deno.env.get('CLIENT_SECRET')!
-const host = Deno.env.get('MASTODON_HOST')!
+import { clientId, clientSecret, host, REDIRECT_URI } from './mastodon.ts'
 
 export const getToken = async (code: string) => {
   const formData = new FormData()
@@ -25,17 +21,4 @@ export const printAuthorizeURL = () => {
     redirect_uri: REDIRECT_URI,
   })
   console.log(`Authorize URL: ${host}/oauth/authorize?${parmas}`)
-}
-
-export const getBlocks = async (token: string) => {
-  const res = await fetch(`${host}/api/v1/blocks`, authHeader(token))
-  return await res.json()
-}
-
-const authHeader = (token: string): RequestInit => {
-  return {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  }
 }
