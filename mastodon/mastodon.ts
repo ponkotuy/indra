@@ -17,7 +17,6 @@ export const authHeader = (token: string): RequestInit => {
 export const paging = async <T>(token: string, beforeRes: Response, page: number = -1): Promise<T[]> => {
   if (page === 0) return []
   const link = beforeRes.headers.get('link')
-  console.log(link)
   if (link == null) return []
   const nextRel = new HTTPHeaderLink(link).getByRel('next').at(0)
   if (!nextRel) return []
