@@ -3,11 +3,12 @@ import { loadOrElseAuth } from '../cache/auth.ts'
 import { loadOrElseBlocks } from '../cache/blocks.ts'
 import { getBlocks } from '../mastodon/blocks.ts'
 import { Command } from 'https://deno.land/x/cliffy@v1.0.0-rc.4/command/mod.ts'
+import { ElementsOption, FilterOption } from './options.ts'
 
 export const printBlocks = new Command()
   .description('print all blocks')
-  .option('-f, --filter <regex:string>', 'filter output', { default: '' })
-  .option('-e, --elements <elem...:string>', 'print only json element')
+  .option(...FilterOption)
+  .option(...ElementsOption)
   .action(async ({ filter, elements }) => {
     const regex = new RegExp(filter)
     const token = await loadOrElseAuth(resolveAuth)
