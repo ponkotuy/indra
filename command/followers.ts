@@ -8,7 +8,7 @@ import { getFollowers } from '../mastodon/followers.ts'
 import { FilterOption } from './options.ts'
 
 const printFollowers = new Command()
-  .description('print your followers')
+  .description('print any followers')
   .option('-a, --all', 'print all followers(use paging)')
   .option('--id <id:string>', 'set account id. default: credential id')
   .option(...FilterOption)

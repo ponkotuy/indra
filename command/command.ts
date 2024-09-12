@@ -2,6 +2,7 @@ import { Command } from 'https://deno.land/x/cliffy@v1.0.0-rc.4/command/mod.ts'
 import { blocks } from './blocks.ts'
 import { identity } from './identity.ts'
 import { followers } from './followers.ts'
+import { notifications } from './notifications.ts'
 
 export const genCommand = async () =>
   await new Command()
@@ -11,4 +12,6 @@ export const genCommand = async () =>
     .command('blocks', blocks)
     .command('identity', identity)
     .command('followers', followers)
+    .command('notifications', notifications)
+    .alias('n')
     .parse(Deno.args)

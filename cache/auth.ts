@@ -8,10 +8,10 @@ const loadAuth = (): string | undefined => {
   return json?.['token']
 }
 
-export const loadOrElseAuth = (gen: () => Promise<string>): Promise<string> => {
+export const loadOrElseAuth = async (gen: () => Promise<string>): Promise<string> => {
   const maybeToken = loadAuth()
   if (maybeToken != undefined) return Promise.resolve(maybeToken)
-  const token = gen()
+  const token = await gen()
   saveJson(filePath)({ token })
   return token
 }
