@@ -24,3 +24,11 @@ export const loadJson = (fname: string): any => {
     return undefined
   }
 }
+
+export const loadOrElseBase = <T>(filePath: string) => async (gen: () => Promise<T>): Promise<T> => {
+  const maybe = loadJson(filePath)
+  if (maybe != undefined) return maybe
+  const data = await gen()
+  saveJson(filePath)(data)
+  return data
+}

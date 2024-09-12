@@ -4,10 +4,6 @@ import { loadOrElseBlocks } from '../cache/blocks.ts'
 import { getBlocks } from '../mastodon/blocks.ts'
 import { Command } from 'https://deno.land/x/cliffy@v1.0.0-rc.4/command/mod.ts'
 
-export interface OptionProps {
-  readonly filter?: string
-}
-
 export const printBlocks = new Command()
   .description('print all blocks')
   .option('-f, --filter <regex:string>', 'filter output', { default: '' })
