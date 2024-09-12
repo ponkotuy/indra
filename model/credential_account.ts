@@ -1,5 +1,3 @@
-export interface CredentialAccount {
-  readonly id: string
-  readonly username: string
-  readonly display_name: string
-}
+import { Account } from './acccount.ts'
+
+export interface CredentialAccount extends Account {}
