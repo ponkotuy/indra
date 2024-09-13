@@ -3,6 +3,7 @@ import { blocks } from './blocks.ts'
 import { identity } from './identity.ts'
 import { followers } from './followers.ts'
 import { notifications } from './notifications.ts'
+import { account } from './account.ts'
 
 export const genCommand = async () =>
   await new Command()
@@ -13,5 +14,16 @@ export const genCommand = async () =>
     .command('identity', identity)
     .command('followers', followers)
     .command('notifications', notifications)
+    .command('account', account)
     .alias('n')
     .parse(Deno.args)
+
+// deno-lint-ignore no-explicit-any
+export const stdout = (data: any, isJson: boolean, count?: string) => {
+  if (isJson) {
+    console.log(JSON.stringify(data))
+  } else {
+    console.log(data)
+    if (count) console.log(`count: ${count}`)
+  }
+}

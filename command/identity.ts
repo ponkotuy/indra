@@ -3,13 +3,16 @@ import { loadOrElseAuth } from '../cache/auth.ts'
 import { resolveAuth } from '../auth.ts'
 import { loadOrElseCredentialAccount } from '../cache/credential_account.ts'
 import { getVerifyCredentials } from '../mastodon/verify_credentials.ts'
+import { JsonOption } from './options.ts'
+import { stdout } from './command.ts'
 
 const printIdentity = new Command()
   .description('print your account information')
-  .action(async () => {
+  .option(...JsonOption)
+  .action(async ({ json }) => {
     const token = await loadOrElseAuth(resolveAuth)
     const identity = await loadOrElseCredentialAccount(() => getVerifyCredentials(token))
-    console.log(identity)
+    stdout(identity, json)
   })
 
 export const identity = new Command()
