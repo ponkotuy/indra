@@ -3,6 +3,8 @@
   "redirects": {
     "https://deno.land/x/http-header-link-es/": "https://deno.land/x/http-header-link-es",
     "https://deno.land/x/opener/mod.ts": "https://deno.land/x/opener@v1.0.1/mod.ts",
+    "https://deno.land/x/url_join/mod.ts": "https://deno.land/x/url_join@1.0.0/mod.ts",
+    "https://deno.land/x/url_parse/mod.ts": "https://deno.land/x/url_parse@1.1.0/mod.ts",
     "https://deno.land/x/xdg_portable#": "https://deno.land/x/xdg_portable@v10.6.0",
     "https://deno.land/x/xdg_portable@v10.6.0/dist/": "https://deno.land/x/xdg_portable@v10.6.0/dist",
     "https://github.com/hugoalh-studio/http-header-link-es/raw/main/mod.ts": "https://raw.githubusercontent.com/hugoalh-studio/http-header-link-es/main/mod.ts",
@@ -95,6 +97,8 @@
     "https://deno.land/x/os_paths@v7.2.0/src/mod.deno.ts": "5e34d7c1a033665276a1a06e3957a52218bf4711a801f38cf92978aacfad5666",
     "https://deno.land/x/os_paths@v7.2.0/src/platform-adapters/_base.ts": "ca9adf679709824e070631921932620ab4dc2a39fff9706f95592d1620e34dc6",
     "https://deno.land/x/os_paths@v7.2.0/src/platform-adapters/deno.deno.ts": "d184d709522bf2703dc12ff335eb6a10d758a3a5dd4d97524d2aef9d3d448c13",
+    "https://deno.land/x/url_join@1.0.0/mod.ts": "d3c7007e3ab15594e54d5b90dce623b3e274a726e0cdf57858e7ecab77a0166c",
+    "https://deno.land/x/url_parse@1.1.0/mod.ts": "c4601d158703de0c07259ee6e0f143448a756f8297121f3a174098327f06802b",
     "https://deno.land/x/xdg_portable@v10.6.0/dist/esm/lib/XDG.js": "4c04a45149d66e4ca29ea914aac137e7b0f0b6a8ef431ffc63fef46bc3747064",
     "https://deno.land/x/xdg_portable@v10.6.0/src/mod.deno.ts": "e478cc109794bfc130ec81711f9a20d594e6fad848f796c68b75dbe510683c39",
     "https://deno.land/x/xdg_portable@v10.6.0/src/platform-adapters/_base.ts": "c79a7f0e5b1d77e23cbc6c782a02958573338e9dfa644a7aa5a1f7c402ff56ef",

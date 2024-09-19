@@ -1,6 +1,7 @@
 import { HTTPHeaderLink } from 'https://github.com/hugoalh-studio/http-header-link-es/raw/v1.0.2/mod.ts'
 
 export const REDIRECT_URI = 'urn:ietf:wg:oauth:2.0:oob'
+export const APP_NAME = 'indra'
 export const APP_URL = 'https://github.com/ponkotuy/indra/'
 
 export const authHeader = (token: string): RequestInit => {

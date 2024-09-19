@@ -34,6 +34,9 @@ export const loadOrElseString =
     const maybe = loadJson(filePath)
     if (maybe != undefined) return maybe[key]
     const data = await gen()
-    saveJson(filePath)({ key: data })
+    // deno-lint-ignore no-explicit-any
+    const obj: any = {}
+    obj[key] = data
+    saveJson(filePath)(obj)
     return data
   }
