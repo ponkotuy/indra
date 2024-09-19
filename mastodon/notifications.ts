@@ -1,14 +1,19 @@
 import { assert } from 'https://deno.land/std@0.134.0/testing/asserts.ts'
-import { authHeader, host } from './mastodon.ts'
+import { authHeader } from './mastodon.ts'
+import { Notification } from '../model/notification.ts'
+import { Authentication } from '../model/authentication.ts'
 
 const LIMIT = 80
 
-export const getNotifications = async (token: string, types: NtfType[], limit: number = LIMIT) => {
+export const getNotifications = async (
+  auth: Authentication,
+  types: NtfType[],
+  limit: number = LIMIT,
+): Promise<Notification[]> => {
   assert(limit <= 80, 'limit must not exceed 80')
   const params = new URLSearchParams({ limit: `${limit}` })
   types.forEach((t) => params.append('types[]', t))
-  const res = await fetch(`${host}/api/v1/notifications?${params}`, authHeader(token))
-  console.log(res)
+  const res = await fetch(`${auth.host}/api/v1/notifications?${params}`, authHeader(auth.token))
   return await res.json()
 }
 

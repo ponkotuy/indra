@@ -1,10 +1,7 @@
 import { HTTPHeaderLink } from 'https://github.com/hugoalh-studio/http-header-link-es/raw/v1.0.2/mod.ts'
 
 export const REDIRECT_URI = 'urn:ietf:wg:oauth:2.0:oob'
-
-export const clientId = Deno.env.get('CLIENT_ID')!
-export const clientSecret = Deno.env.get('CLIENT_SECRET')!
-export const host = Deno.env.get('MASTODON_HOST')!
+export const APP_URL = 'https://github.com/ponkotuy/indra/'
 
 export const authHeader = (token: string): RequestInit => {
   return {

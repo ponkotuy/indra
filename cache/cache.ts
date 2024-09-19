@@ -28,3 +28,12 @@ export const loadOrElseBase = <T>(filePath: string) => async (gen: () => Promise
   saveJson(filePath)(data)
   return data
 }
+
+export const loadOrElseString =
+  (filePath: string, key: string) => async (gen: () => Promise<string>): Promise<string> => {
+    const maybe = loadJson(filePath)
+    if (maybe != undefined) return maybe[key]
+    const data = await gen()
+    saveJson(filePath)({ key: data })
+    return data
+  }

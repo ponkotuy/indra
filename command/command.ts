@@ -4,6 +4,7 @@ import { identity } from './identity.ts'
 import { followers } from './followers.ts'
 import { notifications } from './notifications.ts'
 import { account } from './account.ts'
+import { arrow } from './arrow.ts'
 
 export const genCommand = async () =>
   await new Command()
@@ -14,8 +15,9 @@ export const genCommand = async () =>
     .command('identity', identity)
     .command('followers', followers)
     .command('notifications', notifications)
-    .command('account', account)
     .alias('n')
+    .command('account', account)
+    .command('arrow', arrow)
     .parse(Deno.args)
 
 // deno-lint-ignore no-explicit-any
