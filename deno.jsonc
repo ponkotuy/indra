@@ -7,6 +7,10 @@
     "singleQuote": true
   },
   "tasks": {
-    "main": "deno run --allow-net --allow-run --allow-read --allow-write main.ts"
+    "main": "deno run --allow-net --allow-run --allow-read --allow-write main.ts",
+    "build": "deno compile --allow-net --allow-run --allow-read --allow-write main.ts",
+    "win": "deno compile --allow-net --allow-run --allow-read --allow-write --target x86_64-pc-windows-msvc main.ts",
+    "linux": "deno compile --allow-net --allow-run --allow-read --allow-write --target x86_64-unknown-linux-gnu main.ts",
+    "mac": "deno compile --allow-net --allow-run --allow-read --allow-write --target aarch64-apple-darwin main.ts"
   }
 }
