@@ -1,9 +1,8 @@
-on:
-  release
+name: Upload binary
 
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+on:
+  release:
+    types: [published]
 
 jobs:
   build:
@@ -26,7 +25,12 @@ jobs:
       - name: build binary
         run: deno run ${{ matrix.os.name }}
 
-      - uses: actions/upload-artifact@v4
+      - uses: thedoctor0/zip-release@0.7.6
         with:
-          name: binary-${{ matrix.os.name }}
+          type: 'zip'
+          filename: indra-${{ matrix.os.name }}.zip
           path: ${{ matrix.os.filename }}
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: indra-${{ matrix.os.name }}.zip
