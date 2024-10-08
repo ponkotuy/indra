@@ -19,13 +19,3 @@ export const genCommand = async () =>
     .command('account', account)
     .command('arrow', arrow)
     .parse(Deno.args)
-
-// deno-lint-ignore no-explicit-any
-export const stdout = (data: any, isJson: boolean, count?: string) => {
-  if (isJson) {
-    console.log(JSON.stringify(data))
-  } else {
-    console.log(data)
-    if (count) console.log(`count: ${count}`)
-  }
-}

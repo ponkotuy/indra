@@ -5,8 +5,8 @@ import { getVerifyCredentials } from '../mastodon/verify_credentials.ts'
 import { loadOrElseFollowers } from '../cache/followers.ts'
 import { getFollowers } from '../mastodon/followers.ts'
 import { FilterOption, IdOption, JsonOption } from './options.ts'
-import { stdout } from './command.ts'
 import { filterJson } from '../util/filter_json.ts'
+import { cGroupDesc, stdout } from './util.ts'
 
 const printFollowers = new Command()
   .description('print any followers')
@@ -27,5 +27,6 @@ const printFollowers = new Command()
   })
 
 export const followers = new Command()
+  .description(cGroupDesc('followers'))
   .default('print')
   .command('print', printFollowers)

@@ -3,7 +3,7 @@ import { resolveAuth } from '../util/auth.ts'
 import { loadOrElseCredentialAccount } from '../cache/credential_account.ts'
 import { getVerifyCredentials } from '../mastodon/verify_credentials.ts'
 import { JsonOption } from './options.ts'
-import { stdout } from './command.ts'
+import { cGroupDesc, stdout } from './util.ts'
 
 const printIdentity = new Command()
   .description('print your account information')
@@ -15,5 +15,6 @@ const printIdentity = new Command()
   })
 
 export const identity = new Command()
+  .description(cGroupDesc('identity'))
   .default('print')
   .command('print', printIdentity)

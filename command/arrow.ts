@@ -2,12 +2,12 @@ import { Command } from 'https://deno.land/x/cliffy@v1.0.0-rc.4/command/mod.ts'
 import { resolveAuth } from '../util/auth.ts'
 import { getNotifications, NtfType } from '../mastodon/notifications.ts'
 import { filterJson } from '../util/filter_json.ts'
-import { stdout } from './command.ts'
 import { JsonOption } from './options.ts'
 import { Account } from '../model/acccount.ts'
 import _ from 'https://deno.land/x/os_paths@v7.2.0/src/mod.deno.ts'
 import { postBlock } from '../mastodon/blocks.ts'
 import { Authentication } from '../model/authentication.ts'
+import { cGroupDesc, stdout } from './util.ts'
 
 const DEFAULT_FILTER = new RegExp('神[罪|帝|蒼]')
 const BAN_USERNMAES = ['Twitter', 'YouTube', 'Instagram', 'Gmail']
@@ -43,6 +43,7 @@ const applyArrow = new Command()
   })
 
 export const arrow = new Command()
+  .description(cGroupDesc('arrow'))
   .default('print')
   .command('print', printArrow)
   .command('apply', applyArrow)

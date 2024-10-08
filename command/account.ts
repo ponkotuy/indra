@@ -5,7 +5,7 @@ import { loadOrElseCredentialAccount } from '../cache/credential_account.ts'
 import { getVerifyCredentials } from '../mastodon/verify_credentials.ts'
 import { loadOrElseAccount } from '../cache/account.ts'
 import { getAccount } from '../mastodon/account.ts'
-import { stdout } from './command.ts'
+import { cGroupDesc, stdout } from './util.ts'
 
 const printAccount = new Command()
   .description('print account information')
@@ -19,5 +19,6 @@ const printAccount = new Command()
   })
 
 export const account = new Command()
+  .description(cGroupDesc('account'))
   .default('print')
   .command('print', printAccount)

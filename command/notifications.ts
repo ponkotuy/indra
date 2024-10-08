@@ -2,7 +2,7 @@ import { Command, EnumType } from 'https://deno.land/x/cliffy@v1.0.0-rc.4/comman
 import { getNotifications, NtfType } from '../mastodon/notifications.ts'
 import { resolveAuth } from '../util/auth.ts'
 import { JsonOption } from './options.ts'
-import { stdout } from './command.ts'
+import { cGroupDesc, stdout } from './util.ts'
 
 const printNotifications = new Command()
   .description('print your notifications')
@@ -16,5 +16,6 @@ const printNotifications = new Command()
   })
 
 export const notifications = new Command()
+  .description(cGroupDesc('notifications'))
   .default('print')
   .command('print', printNotifications)
