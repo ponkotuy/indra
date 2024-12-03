@@ -12,7 +12,6 @@ const resolveApp = async (): Promise<[App, string]> => {
   const rawHost = prompt('Please enter mastodon host:')
   if (rawHost === null) Deno.exit(1)
   const url = (URL.parse(rawHost) || URL.parse('https://' + rawHost))!
-  console.log(url)
   const host = `${url.protocol}//${url.hostname}`
   return [await postApp(host, DEFAULT_SCOPES), host]
 }
