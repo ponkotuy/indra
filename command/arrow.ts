@@ -4,17 +4,16 @@ import { getNotifications, NtfType } from '../mastodon/notifications.ts'
 import { filterJson } from '../util/filter_json.ts'
 import { JsonOption } from './options.ts'
 import { Account } from '../model/acccount.ts'
-import _ from 'https://deno.land/x/os_paths@v7.2.0/src/mod.deno.ts'
 import { postBlock } from '../mastodon/blocks.ts'
 import { Authentication } from '../model/authentication.ts'
 import { cGroupDesc, stdout } from './util.ts'
 
 const DEFAULT_FILTER = new RegExp('神[罪|帝|蒼]')
-const BAN_USERNMAES = ['Twitter', 'YouTube', 'Instagram', 'Gmail']
+const BAN_USERNAMES = ['Twitter', 'YouTube', 'Instagram', 'Gmail']
 const WHITE_LIST = 'U'
 
 const usernameFilter = (username: string): boolean =>
-  (username.length === 1 && !WHITE_LIST.includes(username)) || BAN_USERNMAES.includes(username)
+  (username.length === 1 && !WHITE_LIST.includes(username)) || BAN_USERNAMES.includes(username)
 
 /* Accountの重複は排除していないので利用先でなんとかする必要がある */
 const getTarget = async (auth: Authentication): Promise<Account[]> => {

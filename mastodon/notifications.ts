@@ -14,7 +14,9 @@ export const getNotifications = async (
   const params = new URLSearchParams({ limit: `${limit}` })
   types.forEach((t) => params.append('types[]', t))
   const res = await fetch(`${auth.host}/api/v1/notifications?${params}`, authHeader(auth.token))
-  return await res.json()
+  const json = await res.json()
+  if(json.error) throw new Error(`Notificationの取得でエラー\n${json.error}`)
+  return json
 }
 
 export const NtfType = {
