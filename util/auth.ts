@@ -18,9 +18,13 @@ const resolveApp = async (): Promise<[App, string]> => {
 
 const resolveToken = async (host: string, app: App): Promise<string> => {
   printAuthorizeURL(host, app, DEFAULT_SCOPES)
-  const code = prompt('Please enter code:')
-  if (code === null) Deno.exit(1)
-  const token = await getToken(host, app, code, DEFAULT_SCOPES)
+  let token: string | undefined
+  while(!token) {
+    const code = prompt('Please enter code:')
+    if (code === null) continue
+    token = await getToken(host, app, code, DEFAULT_SCOPES)
+    if (!token) console.log('Invalid code. Please try again.')
+  }
   return token
 }
 
