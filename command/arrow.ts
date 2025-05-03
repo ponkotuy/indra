@@ -9,11 +9,9 @@ import { Authentication } from '../model/authentication.ts'
 import { cGroupDesc, stdout } from './util.ts'
 
 const DEFAULT_FILTER = new RegExp('神[罪|帝|蒼]')
-const BAN_USERNAMES = ['Twitter', 'YouTube', 'Instagram', 'Gmail']
-const WHITE_LIST = 'U'
+const BAN_USERNAMES = ['Twitter', 'YouTube', 'Instagram', 'Gmail', '_']
 
-const usernameFilter = (username: string): boolean =>
-  (username.length === 1 && !WHITE_LIST.includes(username)) || BAN_USERNAMES.includes(username)
+const usernameFilter = (username: string): boolean => BAN_USERNAMES.includes(username)
 
 /* Accountの重複は排除していないので利用先でなんとかする必要がある */
 const getTarget = async (auth: Authentication): Promise<Account[]> => {
