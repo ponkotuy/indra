@@ -1,5 +1,6 @@
 import { Command } from 'https://deno.land/x/cliffy@v1.0.0-rc.4/command/mod.ts'
 import { blocks } from './blocks.ts'
+import { domainBlocks } from './domain_blocks.ts'
 import { identity } from './identity.ts'
 import { followers } from './followers.ts'
 import { notifications } from './notifications.ts'
@@ -12,6 +13,7 @@ export const genCommand = async () =>
     .version('0.1.0')
     .description('Script to destroy annoying mastodon neighbours by deno.')
     .command('blocks', blocks)
+    .command('domain-blocks', domainBlocks)
     .command('identity', identity)
     .command('followers', followers)
     .command('notifications', notifications)
